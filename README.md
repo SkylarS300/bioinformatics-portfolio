@@ -21,10 +21,18 @@ This is my computational biology portfolio. This page highlights projects where 
 
 ## 🩺 Breast Cancer Gene Expression Subtypes
 
-📂 *Coming soon*
+📂 [View project folder](./breast-cancer-gene-expression)  
+📒 [View notebook](./breast-cancer-gene-expression/Breast_Cancer_Gene_Expression.ipynb)
 
-Will include PCA, clustering, and subtype-specific gene analysis.
+- Identified differentially expressed genes (DEGs) between breast cancer subtypes
+- Used phenotype metadata to group and compare samples
+- Functional enrichment revealed major differences in:
+  - Mitotic activity
+  - Lipid metabolism
+  - ECM organization
+
+🖼️ Includes enrichment plots for upregulated and downregulated DEGs
 
 ---
 
-Stay tuned for more projects!
+More projects coming soon. Built with 💻 + 🔬
