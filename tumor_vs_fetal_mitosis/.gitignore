@@ -19,3 +19,5 @@ __pycache__/
 # Logs and temporary files
 *.log
 tmp/
+
+data/tcga/primary_tumor_only_mitotic_tpm.csv
