@@ -1,0 +1,21 @@
+# Raw downloads (too large to include)
+data/fetal/ematb6814_fetal_tpm.tpms.tsv
+data/tcga/xena_tcga_target_gtex_tpm.tsv
+
+# Typical Conda/Python envs
+.env/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter checkpoints
+**/.ipynb_checkpoints/
+
+# macOS files
+.DS_Store
+
+# Logs and temporary files
+*.log
+tmp/
