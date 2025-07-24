@@ -20,4 +20,5 @@ __pycache__/
 *.log
 tmp/
 
+# Ignore large TCGA TPM file
 data/tcga/primary_tumor_only_mitotic_tpm.csv
