@@ -76,3 +76,26 @@ pdr download --accession GSE12345 --outdir data/GSE12345/ --files raw,metadata
 
 # Summarize study samples
 pdr summary --accession GSE12345
+```
+
+## Next Steps
+- Packaging on PyPI  
+- Adding alignment/QC pipeline integration  
+
+---
+
+## 🏁 Next Projects (Coming Soon)
+- Single‐cell RNA-seq QC dashboard  
+- Automated differential expression wrapper  
+- Genome build version manager  
+- Interactive multi-omics explorer  
+
+---
+
+## 📖 How to Use This Site
+1. Navigate via the **Project** links above  
+2. Each project contains code, data descriptions, and example outputs  
+3. Clone any project with:
+   ```bash
+   git clone git@github.com:<username>/bioinformatics-portfolio.git
+   cd <project-folder>
