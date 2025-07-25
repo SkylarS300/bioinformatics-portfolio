@@ -99,3 +99,7 @@ pdr summary --accession GSE12345
    ```bash
    git clone git@github.com:<username>/bioinformatics-portfolio.git
    cd <project-folder>
+   ```
+4. Follow each project’s README for environment setup and running instructions
+
+Built with 💻 + 🔬. Feedback and contributions welcome!
