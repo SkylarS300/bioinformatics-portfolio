@@ -1,38 +1,78 @@
 # 🧬 Bioinformatics Portfolio
 
-This is my computational biology portfolio. This page highlights projects where I explore real RNA-seq data, build pipelines, analyze gene expression in cancer, and develop programs to automate scientific data visualization.
+Welcome to my computational biology portfolio—where code meets biology!  Here you’ll find projects that dive into real RNA-seq data, build reproducible pipelines, analyze cancer gene expression, and even automate public-data retrieval.
 
 ---
 
 ## 🔁 Circadian Gene Dysregulation in Pancreatic Cancer
 
-📂 [View project folder](./circadian-dysregulation-tcga-paad)  
-📒 [View notebook](./circadian-dysregulation-tcga-paad/CircadianGeneDisruption_InCancer.ipynb)
+📂 [Project folder](./circadian-dysregulation-tcga-paad)  
+📒 [Notebook](./circadian-dysregulation-tcga-paad/CircadianGeneDisruption_InCancer.ipynb)
 
-- Investigated 32 experimentally validated circadian genes using TCGA-PAAD RNA-seq data
-- Performed Welch’s t-test + FDR correction to find significant expression differences
-- Visualized results with a volcano plot
-
-✅ **Significant genes found**:
-- **RAB24** (downregulated)
-- **WDR75** (upregulated)
+- **Data & Methods:**  
+  - TCGA-PAAD RNA-seq TPM (n≈178 samples)  
+  - 32 known circadian regulators  
+  - Welch’s t-test + FDR correction  
+- **Key Findings:**  
+  - **RAB24** significantly downregulated  
+  - **WDR75** significantly upregulated  
+- **Visualization:** Publication-quality volcano plot and boxplots.
 
 ---
 
 ## 🩺 Breast Cancer Gene Expression Subtypes
 
-📂 [View project folder](./breast-cancer-gene-expression)  
-📒 [View notebook](./breast-cancer-gene-expression/Breast_Cancer_Gene_Expression.ipynb)
+📂 [Project folder](./breast-cancer-gene-expression)  
+📒 [Notebook](./breast-cancer-gene-expression/Breast_Cancer_Gene_Expression.ipynb)
 
-- Identified differentially expressed genes (DEGs) between breast cancer subtypes
-- Used phenotype metadata to group and compare samples
-- Functional enrichment revealed major differences in:
-  - Mitotic activity
-  - Lipid metabolism
-  - ECM organization
-
-🖼️ Includes enrichment plots for upregulated and downregulated DEGs
+- **Data & Methods:**  
+  - TCGA-BRCA RNA-seq counts & subtype metadata  
+  - EdgeR/limma-voom for differential expression  
+  - GO/KEGG enrichment via g:Profiler  
+- **Highlights:**  
+  - Mitotic genes enriched in Basal vs. Luminal  
+  - Lipid metabolism pathways altered in HER2+  
+  - ECM remodeling signatures in Luminal B  
+- **Figures:** Volcano plots, heatmaps, enrichment bar charts.
 
 ---
 
-More projects coming soon. Built with 💻 + 🔬
+## 🧬 Tumor vs. Fetal Mitosis
+
+📂 [Project folder](./tumor_vs_fetal_mitosis)  
+📒 [Notebook](./tumor_vs_fetal_mitosis/notebooks/01_expression_analysis.ipynb)
+
+- **Hypothesis:** Adult tumors hijack fetal mitotic programs.  
+- **Data:**  
+  - **Fetal:** Expression Atlas E-MATB-6814 TPM (597 mitotic genes × 120 samples)  
+  - **Tumor:** TCGA primary tumors TPM (597 genes × ~9 185 samples)  
+- **Workflow:**  
+  1. **PCA** of fetal and tumor mitotic expression  
+  2. **Euclidean‐distance matching**: each tumor → nearest fetal stage–tissue (119 centroids)  
+  3. **Hierarchical clustering** of tumors vs. fetal profiles  
+  4. **Agglomerative clustering** defines 5 tumor subgroups  
+  5. **Differential t-test** identifies top marker mitotic genes per cluster  
+- **Key Results:**  
+  - Tumors and fetal samples overlap in mitotic PCA space  
+  - Most tumors match high-proliferation fetal tissues (liver, heart, kidney)  
+  - Tumors subdivide into clusters resembling specific developmental windows (e.g. 5–9 wk heart, neonate liver, adolescent testis)  
+  - Top marker genes (e.g. MKI67, PLK1) are available in `results/cluster_markers/`
+- **Figures & Tables:**  
+  - Joint PCA, barplots of nearest tissues, clustermap heatmap, cluster-centroid heatmap  
+  - CSVs of per-tumor matches and cluster marker genes
+
+---
+
+## 🛠️ Public Data Retriever CLI (in development)
+
+A command-line tool to **search**, **download**, and **organize** public datasets from GEO, SRA, ArrayExpress, and Expression Atlas:
+
+```bash
+# Search studies
+pdr search --term "glioblastoma RNA-seq" --source GEO --limit 5
+
+# Download data for a study
+pdr download --accession GSE12345 --outdir data/GSE12345/ --files raw,metadata
+
+# Summarize study samples
+pdr summary --accession GSE12345
