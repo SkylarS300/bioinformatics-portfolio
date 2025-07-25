@@ -1,6 +1,6 @@
 # 🧬 Bioinformatics Portfolio
 
-Welcome to my computational biology portfolio—where code meets biology!  Here you’ll find projects that dive into real RNA-seq data, build reproducible pipelines, analyze cancer gene expression, and even automate public-data retrieval.
+Hey. Welcome to my computational biology portfolio! Below are various projects involving real RNA-seq data, building reproducible pipelines, analyzing cancer gene expression, and automating public-data retrieval.
 
 ---
 
