@@ -63,27 +63,6 @@ Hey. Welcome to my computational biology portfolio! Below are various projects i
 
 ---
 
-## 🛠️ Public Data Retriever CLI (in development)
-
-A command-line tool to **search**, **download**, and **organize** public datasets from GEO, SRA, ArrayExpress, and Expression Atlas:
-
-```bash
-# Search studies
-pdr search --term "glioblastoma RNA-seq" --source GEO --limit 5
-
-# Download data for a study
-pdr download --accession GSE12345 --outdir data/GSE12345/ --files raw,metadata
-
-# Summarize study samples
-pdr summary --accession GSE12345
-```
-
-## Next Steps
-- Packaging on PyPI  
-- Adding alignment/QC pipeline integration  
-
----
-
 ## 🏁 Next Projects (Coming Soon)
 - Single‐cell RNA-seq QC dashboard  
 - Automated differential expression wrapper  
